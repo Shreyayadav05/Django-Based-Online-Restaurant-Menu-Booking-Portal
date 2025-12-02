@@ -1,0 +1,236 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Restaurant | Home</title>
+
+    <style>
+        /* -------- RESET -------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #f8f8f8;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* -------- NAVBAR -------- */
+        nav {
+            width: 100%;
+            padding: 18px 40px;
+            background: #ffffffee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            z-index: 999;
+        }
+
+        nav h2 {
+            color: #d35400;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d35400;
+        }
+
+        /* -------- HERO SECTION -------- */
+        .hero {
+            height: 100vh;
+            padding: 80px 40px;
+            background: linear-gradient(to right, #ffe5d1, #ffffff);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            max-width: 50%;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            line-height: 60px;
+            color: #d35400;
+        }
+
+        .hero-text p {
+            margin: 20px 0;
+            font-size: 18px;
+            color: #444;
+        }
+
+        .btn {
+            background: #d35400;
+            padding: 14px 28px;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #b74400;
+            transform: translateY(-3px);
+        }
+
+        /* -------- IMAGE -------- */
+        .hero img {
+            width: 450px;
+            height: 450px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: slideIn 1.2s ease-in-out;
+        }
+
+        /* -------- FEATURES -------- */
+        .features {
+            padding: 70px 40px;
+            background: #fff;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #d35400;
+        }
+
+        .cards {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 300px;
+            padding: 25px;
+            text-align: center;
+            border-radius: 15px;
+            background: #fff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: #d35400;
+            margin-bottom: 10px;
+        }
+
+        /* -------- FOOTER -------- */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #d35400;
+            color: #fff;
+            margin-top: 40px;
+        }
+
+        /* -------- ANIMATIONS -------- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>My Restaurant</h2>
+        <div>
+            <a href="/">Home</a>
+            <a href="/menu/">Menu</a>
+            <a href="/contact/">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Delicious Food, Fresh Taste</h1>
+            <p>We serve the best dishes made with love. Experience the flavors like never before.</p>
+            <a href="/menu/" class="btn">Explore Menu 🍽️</a>
+        </div>
+
+        <img src="{% static 'images/homepage.png' %}" alt="Food Image" class="hero-image">
+
+    </div>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <h2>Why Choose Us</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>🍕 Fresh Ingredients</h3>
+                <p>We use only high-quality and fresh materials for every dish.</p>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Fast Service</h3>
+                <p>Your food is prepared quickly and served hot.</p>
+            </div>
+
+            <div class="card">
+                <h3>💰 Affordable Prices</h3>
+                <p>Enjoy premium taste at budget-friendly prices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 My Restaurant | All Rights Reserved
+    </footer>
+
+    <!-- JS ANIMATION -->
+    <script>
+        // Smooth scroll for buttons or links
+        document.querySelectorAll("a").forEach(a => {
+            a.addEventListener("click", () => {
+                a.style.transform = "scale(0.95)";
+                setTimeout(() => a.style.transform = "scale(1)", 200);
+            });
+        });
+    </script>
+
+</body>
+</html>

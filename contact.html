@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | My Restaurant</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #fff7f0;
+            color: #333;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            padding: 18px 40px;
+            background: #ffffffee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 999;
+        }
+
+        nav h2 {
+            color: #d35400;
+            font-weight: 700;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d35400;
+        }
+
+        /* PAGE TITLE */
+        .title {
+            margin-top: 120px;
+            text-align: center;
+            font-size: 40px;
+            color: #d35400;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* CONTACT SECTION */
+        .contact-container {
+            max-width: 900px;
+            margin: 50px auto;
+            display: flex;
+            gap: 40px;
+            padding: 0 40px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        /* LEFT INFO BOX */
+        .info-box {
+            flex: 1;
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .info-box h3 {
+            color: #d35400;
+            margin-bottom: 15px;
+        }
+
+        .info-box p {
+            margin: 12px 0;
+            font-size: 16px;
+        }
+
+        /* FORM BOX */
+        .form-box {
+            flex: 1;
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-box label {
+            display: block;
+            margin-top: 12px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-box input,
+        .form-box textarea {
+            width: 100%;
+            margin-top: 6px;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #bbb;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-box input:focus,
+        .form-box textarea:focus {
+            border-color: #d35400;
+        }
+
+        .form-box button {
+            margin-top: 18px;
+            background: #d35400;
+            color: white;
+            padding: 14px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .form-box button:hover {
+            background: #b74400;
+            transform: translateY(-3px);
+        }
+
+        /* GOOGLE MAP */
+        .map {
+            margin: 40px auto;
+            max-width: 900px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            animation: slideUp 1.2s ease-in-out;
+        }
+
+        iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #d35400;
+            color: #fff;
+            margin-top: 50px;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>My Restaurant</h2>
+        <div>
+            <a href="/">Home</a>
+            <a href="/menu/">Menu</a>
+            <a href="/contact/">Contact</a>
+        </div>
+    </nav>
+
+    <!-- TITLE -->
+    <h1 class="title">Contact Us</h1>
+
+    <!-- CONTACT SECTION -->
+    <div class="contact-container">
+
+        <!-- LEFT INFO BOX -->
+        <div class="info-box">
+            <h3>📍 Get in Touch</h3>
+            <p><strong>Phone:</strong> +91 9876543210</p>
+            <p><strong>Email:</strong> restaurant@example.com</p>
+            <p><strong>Address:</strong> MG Road, Bengaluru, India</p>
+            <p>We are here to serve you the best food experience.</p>
+        </div>
+
+        <!-- FORM BOX -->
+        <div class="form-box">
+            <h3 style="color:#d35400; margin-bottom:10px;">📬 Send a Message</h3>
+            <form>
+                <label>Your Name</label>
+                <input type="text" placeholder="Enter your name">
+
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email">
+
+                <label>Message</label>
+                <textarea rows="4" placeholder="Write your message..."></textarea>
+
+                <button type="button" onclick="submitMessage()">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- GOOGLE MAP -->
+    <div class="map">
+        <iframe src="https://maps.google.com/maps?q=bengaluru&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 My Restaurant | All Rights Reserved
+    </footer>
+
+    <!-- JS -->
+    <script>
+        // Fake message popup on submit
+        function submitMessage() {
+            alert("Thank you! Your message has been sent.");
+        }
+
+        // Small click animation
+        document.querySelectorAll("a").forEach(a => {
+            a.addEventListener("mousedown", () => a.style.transform = "scale(0.95)");
+            a.addEventListener("mouseup", () => a.style.transform = "scale(1)");
+        });
+    </script>
+
+</body>
+</html>
